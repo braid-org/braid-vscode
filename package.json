@@ -2,7 +2,7 @@
   "name": "braid-vscode",
   "displayName": "Braid",
   "description": "Open remote URLs as editable buffers — GETs content on open, PUTs on every change.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.80.0"
   },
