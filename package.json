@@ -1,0 +1,64 @@
+{
+  "name": "braid-vscode",
+  "displayName": "Braid",
+  "description": "Open remote URLs as editable buffers — GETs content on open, PUTs on every change.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": ["*"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "braid.open",
+        "title": "OPEN URL",
+        "category": "Braid"
+      },
+      {
+        "command": "braid.syncText",
+        "title": "Sync Text with URL",
+        "category": "Braid"
+      },
+      {
+        "command": "braid.edit",
+        "title": "Edit Synced Buffer",
+        "category": "Braid"
+      },
+      {
+        "command": "braid.getText",
+        "title": "Get Synced Buffer Text",
+        "category": "Braid"
+      },
+      {
+        "command": "braid.waitForAck",
+        "title": "Wait for ACK",
+        "category": "Braid"
+      },
+      {
+        "command": "braid.endSync",
+        "title": "End Sync",
+        "category": "Braid"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test:fuzz": "npm run compile && node out/test/launch-fuzz.js",
+    "test:fuzz:simpleton": "npm run compile && node out/test/launch-fuzz.js simpleton"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "@types/vscode": "^1.110.0",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@vscode/test-electron": "^2.5.2",
+    "braid-http": "^1.3.111",
+    "braid-text": "^0.3.23"
+  }
+}
